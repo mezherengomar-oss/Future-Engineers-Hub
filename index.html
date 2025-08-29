@@ -3,214 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Future Engineers Hub</title>
+<title>Future Engineers HUB</title>
 <style>
-/* RESET */
-* {margin:0; padding:0; box-sizing:border-box; font-family: "Segoe UI", sans-serif;}
-body {background:#0a0f29; color:#fff; line-height:1.6; overflow-x:hidden;}
-
-/* TECH PARTICLES BACKGROUND */
-body::before {
-  content:'';
-  position:fixed;
-  top:0; left:0; width:100%; height:100%;
-  background: radial-gradient(circle, rgba(0,230,255,0.15) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index:-1;
-  animation: moveParticles 60s linear infinite;
-}
-@keyframes moveParticles { 0%{background-position:0 0;} 100%{background-position:1000px 1000px;} }
-
-/* HEADER */
-header {background:rgba(10,15,41,0.95); color:#fff; display:flex; justify-content:center; align-items:center; padding:15px 40px; position:sticky; top:0; z-index:1000;}
-header .logo {font-size:1.5rem; font-weight:bold; text-align:center;}
-nav {position:absolute; right:40px;}
-nav ul {list-style:none; display:flex; gap:20px;}
-nav a {color:#fff; transition:0.3s; font-weight:500;}
-nav a:hover {color:#00e6ff; transform:scale(1.05);}
-
-/* HERO */
-.hero {text-align:center; padding:100px 20px; background: linear-gradient(to right, rgba(10,15,41,0.9), rgba(31,58,147,0.9)); color:white;}
-.hero h1 {font-size:3rem; margin-bottom:10px; animation:fadeInUp 1.5s ease-in;}
-.hero p {font-size:1.2rem; margin-bottom:20px; animation:fadeInUp 1.5s ease-in 0.5s;}
-.btn {display:inline-block; padding:10px 20px; background:#00e6ff; color:#0a0f29; border-radius:5px; transition:0.3s;}
-.btn:hover {background:#fff; color:#0a0f29; transform:scale(1.05);}
-
-/* COURSES */
-.courses {padding:60px 40px; text-align:center;}
-.course-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:30px;}
-.course-card {background:white; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; color:#000; animation:fadeInUp 1s ease-in;}
-.course-card:hover {transform:translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
-.course-card h3 {margin-bottom:10px; color:#1f3a93;}
-.course-card p {margin-bottom:15px; font-size:0.95rem; line-height:1.4;}
-
-/* COURSE DETAIL */
-.course-detail {padding:60px 40px; display:none; text-align:center; animation:fadeIn 1s ease-in;}
-.course-detail img {max-width:400px; width:100%; border-radius:10px; margin-bottom:20px; animation:fadeIn 1.2s ease-in;}
-.course-detail ul {list-style:disc; text-align:left; max-width:600px; margin:20px auto;}
-.course-detail li {margin-bottom:10px; font-size:1.1rem;}
-
-/* CALENDAR */
-.calendar {padding:60px 40px; text-align:center; animation:fadeIn 1s ease-in;}
-
-/* ENROLL */
-.enroll {padding:60px 40px; text-align:center; background:#eef2f7; color:#000; animation:fadeIn 1s ease-in;}
-
-/* LOGIN/DASHBOARD */
-.login-section {padding:60px 40px; text-align:center; background:#f0f4f8; color:#000; animation:fadeIn 1s ease-in;}
-.login-box {background:white; max-width:400px; margin:20px auto; padding:30px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
-.login-box h3 {margin-bottom:20px; color:#1f3a93;}
-.login-box input {width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;}
-.login-box button {width:100%; padding:10px; background:#00e6ff; border:none; border-radius:5px; cursor:pointer; transition:0.3s;}
-.login-box button:hover {background:#00d4ff; transform:scale(1.05);}
-
-/* DASHBOARD */
-.dashboard {padding:60px 40px;}
-.dashboard h3 {color:#1f3a93; margin-bottom:20px;}
-.dashboard ul {list-style:none; padding-left:0;}
-.dashboard li {background:white; padding:15px; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-
-/* FOOTER */
-footer {text-align:center; padding:20px; background:#0a0f29; color:#fff;}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);}}
-@keyframes fadeIn {0%{opacity:0;} 100%{opacity:1;}}
+body { margin:0; font-family:Arial,sans-serif; background:#0a0f24; color:white; overflow-x:hidden; }
+header { background: rgba(0,0,0,0.8); padding:10px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
+header h1 { margin:0; font-size:22px; color:#00e6ff; }
+nav a { color:#00e6ff; margin-left:20px; text-decoration:none; font-weight:bold; transition: color 0.3s; }
+nav a:hover { color:#ff4081; }
+.hero { text-align:center; padding:60px 20px; background: linear-gradient(135deg,#0f2027,#203a43,#2c5364); animation: fadeIn 2s ease-in-out; }
+.hero h2 { font-size:40px; color:#00e6ff; animation: glow 2s infinite alternate; }
+@keyframes glow { from {text-shadow:0 0 10px #00e6ff;} to {text-shadow:0 0 25px #00e6ff;} }
+.courses { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:30px; }
+.course { background: rgba(255,255,255,0.05); border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 0 15px rgba(0,230,255,0.3); transition: transform 0.3s, box-shadow 0.3s; }
+.course:hover { transform: translateY(-8px); box-shadow:0 0 25px rgba(0,230,255,0.6); }
+.course img { width:100%; height:180px; object-fit:cover; }
+.course h3 { margin:10px 0; color:#00e6ff; }
+.course button { margin:10px; padding:8px 16px; border:none; border-radius:20px; background:#00e6ff; color:#000; font-weight:bold; cursor:pointer; transition:background 0.3s; }
+.course button:hover { background:#ff4081; color:white; }
+@keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+section { display:none; padding:40px 20px; animation: fadeIn 1s ease forwards; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+#courseDetail img { max-width:100%; border-radius:12px; margin-bottom:20px; }
+#courseDetail h2 { color:#00e6ff; margin-bottom:10px; }
+#courseDetail h3 { color:#ff4081; margin-bottom:5px; }
+#courseDetail p { margin-bottom:15px; }
+#courseDetail ul { margin-left:20px; margin-bottom:20px; }
+.chatbot { position: fixed; bottom:20px; right:20px; width:300px; background: rgba(0,0,0,0.9); border:2px solid #00e6ff; border-radius:12px; box-shadow:0 0 20px rgba(0,230,255,0.5); display:flex; flex-direction:column; z-index:2000; }
+.chatbot-header { background:#00e6ff; color:black; font-weight:bold; padding:10px; text-align:center; }
+.chatbot-messages { flex:1; padding:10px; overflow-y:auto; max-height:250px; font-size:14px; }
+.chatbot-input { display:flex; border-top:1px solid #00e6ff; }
+.chatbot-input input { flex:1; border:none; padding:8px; outline:none; }
+.chatbot-input button { background:#00e6ff; border:none; padding:8px 12px; cursor:pointer; }
+canvas#bgCanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
+<canvas id="bgCanvas"></canvas>
 <header>
-  <div class="logo">Future Engineers HUB</div>
-  <nav>
-    <ul>
-      <li><a href="#home" onclick="showSection('hero')">Home</a></li>
-      <li><a href="#courses" onclick="showSection('courses')">Courses</a></li>
-      <li><a href="#calendar" onclick="showSection('calendar')">Calendar</a></li>
-      <li><a href="#enroll" onclick="showSection('enroll')">Enroll</a></li>
-    </ul>
-  </nav>
+<h1>Future Engineers HUB</h1>
+<nav><a href="#" onclick="showSection('dashboard')">Home</a></nav>
 </header>
+<div class="hero">
+<h2>Welcome Future Engineers 🚀</h2>
+<p>Explore your courses and start learning today.</p>
+</div>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <h1>Welcome to Future Engineers Hub</h1>
-  <p>"Welcome to your learning hub! We're excited to accompany you on your journey to mastering engineering courses and advancing your knowledge. Let's learn, explore, and succeed together!"</p>
-  <a href="#courses" class="btn" onclick="showSection('courses')">Explore Courses</a>
+<section id="dashboard" style="display:block;">
+<div class="courses">
+<div class="course">
+<img src="https://d3hfl9xoa8vpcx.cloudfront.net/Java%20Programming%20Language-A%20Comprehensive%20Guide.jpg">
+<h3>Java Programming</h3>
+<button onclick="openCourse('Java Programming')">View Course</button>
+</div>
+<div class="course">
+<img src="https://media.licdn.com/dms/image/v2/C4D12AQG8hRf50AOAvQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1597060345146?e=2147483647&v=beta&t=qNWyXPITEpq52ipELC2km2ITzXztKMDdMtReCOVrviU">
+<h3>Physics for Engineers</h3>
+<button onclick="openCourse('Physics for Engineers')">View Course</button>
+</div>
+<div class="course">
+<img src="https://media.istockphoto.com/id/594907500/photo/closeup-electronic-circuit-board.jpg?s=612x612&w=0&k=20&c=XlchPvcO2MFKZjOup_Q6AjCpa1gNCXuQtlRhpXm1Erc=">
+<h3>Digital Logic</h3>
+<button onclick="openCourse('Digital Logic')">View Course</button>
+</div>
+<div class="course">
+<img src="https://media.licdn.com/dms/image/v2/D4D12AQGQt_uYVLll0w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1659011887161?e=2147483647&v=beta&t=sMikTVD7w-9yEySdXJmkC3XmQechuYwkl26Eu1toVPc">
+<h3>Communications Network</h3>
+<button onclick="openCourse('Communications Network')">View Course</button>
+</div>
+<div class="course">
+<img src="https://www.insidehighered.com/sites/default/files/styles/large/public/media/gettyimages-1265965042-170667a.jpg?itok=TrxSagN6">
+<h3>Calculus</h3>
+<button onclick="openCourse('Calculus')">View Course</button>
+</div>
+<div class="course">
+<img src="https://www.stemrobo.com/wp-content/uploads/2024/01/blog-24.jpg">
+<h3>Robotics</h3>
+<button onclick="openCourse('Robotics')">View Course</button>
+</div>
+<div class="course">
+<img src="https://i.ytimg.com/vi/0WDhKCPtbng/sddefault.jpg">
+<h3>Linear Algebra</h3>
+<button onclick="openCourse('Linear Algebra')">View Course</button>
+</div>
+<div class="course">
+<img src="https://online.stanford.edu/sites/default/files/styles/widescreen_tiny/public/2018-08/introduction-to-probability-and-statistics-for-epidemiology_HRP259.jpg?h=66807ab2&itok=2D9b35K3">
+<h3>Probability and Statistics</h3>
+<button onclick="openCourse('Probability and Statistics')">View Course</button>
+</div>
+</div>
+
+<h2>Class Calendar</h2>
+<iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarlink" style="border:0" width="100%" height="400"></iframe>
+<h2>Register Here</h2>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxIB6T9FbRVIl6qgGzLgX8_jtXpea1s1J5myP7-qmC2v75xA/viewform?usp=header" width="100%" height="600"></iframe>
 </section>
 
-<!-- COURSES -->
-<section id="courses" class="courses">
-  <h2>Available Courses</h2>
-  <div class="course-grid">
-    <div class="course-card" onclick="openCourse('Calculus')">
-      <h3>Calculus</h3>
-      <p>learn to analyze and understand how quantities change and relate to each other through calculus.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Communications network')">
-      <h3>Communications network</h3>
-      <p>learn how data is transmitted, routed, and managed across interconnected systems in a communications network.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Digital logic')">
-      <h3>Digital logic</h3>
-      <p>learn how to design and analyze digital circuits and systems using logic gates and binary operations.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Electric Circuits')">
-      <h3>Electric Circuits</h3>
-      <p>learn how to analyze and design electrical circuits, including understanding components like resistors, capacitors, inductors, and how they work together to control electrical current and voltage.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Linear Algebra')">
-      <h3>Linear Algebra</h3>
-      <p>learn how to analyze and solve systems of linear equations, work with vectors and matrices, understand vector spaces, and apply concepts like eigenvalues and eigenvectors to various mathematical and real-world problems.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Probability and Statistics')">
-      <h3>Probability and Statistics</h3>
-      <p>learn how to analyze data, understand likelihoods and chances of events, interpret statistical measures like mean, median, and standard deviation, and apply probability models to make informed decisions and predictions.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Physics for Engineers')">
-      <h3>Physics for Engineers</h3>
-      <p>learn fundamental principles such as mechanics (forces, motion, energy, momentum), thermodynamics, electromagnetism, and waves.</p>
-      <span class="btn">View Course</span>
-    </div>
-    <div class="course-card" onclick="openCourse('Java programming')">
-      <h3>Java programming</h3>
-      <p>teaches the fundamentals of Java language, including syntax, data types, control structures, object-oriented programming concepts, and basic application development.</p>
-      <span class="btn">View Course</span>
-    </div>
-  </div>
+<section id="courseDetail">
+<h2 id="courseTitle"></h2>
+<img id="courseImage" src="">
+<h3>Description:</h3><p id="courseDesc"></p>
+<h3>History & Importance:</h3><p id="courseHistory"></p>
+<h3>Skills & Features:</h3>
+<ul id="courseLearn"></ul>
+<button onclick="showSection('dashboard')">Back to Dashboard</button>
 </section>
 
-<!-- COURSE DETAIL -->
-<section class="course-detail" id="courseDetail">
-  <h2 id="courseTitle">Course Title</h2>
-  <img id="courseImage" src="" alt="Course Image">
-  <h3>What you will learn:</h3>
-  <ul id="courseLearn"></ul>
-  <button class="btn" onclick="showSection('hero')">Back to Home</button>
-</section>
-
-<!-- CALENDAR -->
-<section id="calendar" class="calendar">
-  <h2>Class Calendar</h2>
-  <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarlink&ctz=Asia/Beirut"
-          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-</section>
-
-<!-- ENROLL -->
-<section id="enroll" class="enroll">
-  <h2>Enroll Now</h2>
-  <p>Fill out the form to join your course.</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxIB6T9FbRVIl6qgGzLgX8_jtXpea1s1J5myP7-qmC2v75xA/viewform?usp=header"
-          width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Future Engineers HUB. All rights reserved.</p>
-</footer>
+<div class="chatbot">
+<div class="chatbot-header">AI Tutor</div>
+<div class="chatbot-messages" id="chatMessages"></div>
+<div class="chatbot-input">
+<input type="text" id="chatInput" placeholder="Ask a question">
+<button onclick="sendMessage()">Send</button>
+</div>
+</div>
 
 <script>
 const courses = {
-  "Calculus": { image: "https://www.thoughtco.com/thmb/irSi_hwriBZL3QbGsCiiNsgaSWI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/calculus-on-blackboard-79338340-5be4695946e0fb0026d6856f.jpg", learn: ["Understand derivatives and integrals","Analyze change and motion","Solve real-world mathematical problems"] },
-  "Communications network": { image: "https://media.licdn.com/dms/image/v2/D4D12AQGQt_uYVLll0w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1659011887161?e=2147483647&v=beta&t=sMikTVD7w-9yEySdXJmkC3XmQechuYwkl26Eu1toVPc", learn: ["Understand data transmission methods","Learn routing and network protocols","Manage connected systems efficiently"] },
-  "Digital logic": { image: "https://www.shutterstock.com/image-photo/abstractclose-mainboard-electronic-background-logic-600nw-2478532787.jpg", learn: ["Design digital circuits","Understand binary operations","Apply logic gates in systems"] },
-  "Electric Circuits": { image: "https://media.geeksforgeeks.org/wp-content/uploads/20230227144514/Electric-Circuit-3.jpg", learn: ["Analyze electrical components","Understand circuit design","Work with resistors, capacitors, and inductors"] },
-  "Linear Algebra": { image: "https://i.ytimg.com/vi/0WDhKCPtbng/sddefault.jpg", learn: ["Solve linear equations","Work with vectors and matrices","Understand eigenvalues and vector spaces"] },
-  "Probability and Statistics": { image: "https://online.stanford.edu/sites/default/files/styles/widescreen_tiny/public/2018-08/introduction-to-probability-and-statistics-for-epidemiology_HRP259.jpg?h=66807ab2&itok=2D9b35K3", learn: ["Analyze data and probabilities","Understand statistical measures","Make predictions using probability models"] },
-  "Physics for Engineers": { image: "https://media.licdn.com/dms/image/v2/C4D12AQG8hRf50AOAvQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1597060345146?e=2147483647&v=beta&t=qNWyXPITEpq52ipELC2km2ITzXztKMDdMtReCOVrviU", learn: ["Understand mechanics and motion","Learn thermodynamics","Study electromagnetism and waves"] },
-  "Java programming": { image: "https://d3hfl9xoa8vpcx.cloudfront.net/Java%20Programming%20Language-A%20Comprehensive%20Guide.jpg", learn: ["Learn Java syntax and basics","Understand object-oriented programming","Develop simple applications"] }
+"Java Programming":{image:"https://d3hfl9xoa8vpcx.cloudfront.net/Java%20Programming%20Language-A%20Comprehensive%20Guide.jpg",desc:"Learn Java language basics including syntax, control structures, and OOP concepts.",history:"Java was created in 1995 by Sun Microsystems and is widely used in enterprise, web, and Android applications.",learn:["Object-Oriented Programming","Syntax & Data types","Application Development"]},
+"Physics for Engineers":{image:"https://media.licdn.com/dms/image/v2/C4D12AQG8hRf50AOAvQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1597060345146?e=2147483647&v=beta&t=qNWyXPITEpq52ipELC2km2ITzXztKMDdMtReCOVrviU",desc:"Understand mechanics, electromagnetism, thermodynamics, and waves for engineering applications.",history:"Physics forms the basis of engineering; understanding principles allows innovation and safe design.",learn:["Mechanics & Motion","Thermodynamics","Electromagnetism & Waves"]},
+"Digital Logic":{image:"https://media.istockphoto.com/id/594907500/photo/closeup-electronic-circuit-board.jpg?s=612x612&w=0&k=20&c=XlchPvcO2MFKZjOup_Q6AjCpa1gNCXuQtlRhpXm1Erc=",desc:"Learn to design and analyze digital circuits using logic gates and binary operations.",history:"Digital logic design is fundamental for computer engineering and electronic device development.",learn:["Logic Gates","Boolean Algebra","Circuit Design & Analysis"]},
+"Communications Network":{image:"https://www.frontiersin.org/files/Articles/889355/fenrg-10-889355-HTML/image_m/fenrg-10-889355-g001.jpg",desc:"Learn how data is transmitted, routed, and managed across networks.",history:"Communication networks enable modern internet and telecommunication systems, essential for connectivity.",learn:["Data Transmission","Network Protocols","Routing & Switching"]},
+"Calculus":{image:"https://i.ytimg.com/vi/GiCojsAWRj0/maxresdefault.jpg",desc:"Analyze how quantities change and relate through derivatives and integrals.",history:"Calculus was developed in the 17th century by Newton and Leibniz; essential for engineering and science.",learn:["Derivatives & Integrals","Real-world Problem Solving","Rate of Change Analysis"]},
+"Robotics":{image:"https://datafloq.com/nitropack_static/bwFPUlexqovNnpgzVYWHSBGgHhXiGuaJ/assets/images/optimized/rev-1a064cb/datafloq.com/wp-content/uploads/2023/08/robotics-and-automation-750x420.jpg",desc:"Learn robot design, control, sensors, and programming.",history:"Robotics combines mechanics, electronics, and computing to automate tasks and innovate technology.",learn:["Robot Mechanics","Control Systems","Sensor Integration"]},
+"Linear Algebra":{image:"https://substackcdn.com/image/fetch/$s_!FQl_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F360f8be5-a78d-479a-89ec-b8f49b5ad245_700x381.png",desc:"Study vectors, matrices, and linear systems applied to engineering problems.",history:"Linear Algebra underpins computer graphics, machine learning, and scientific computations.",learn:["Vectors & Matrices","Eigenvalues & Eigenvectors","Linear Systems Solving"]},
+"Probability and Statistics":{image:"https://vitalflux.com/wp-content/uploads/2023/03/difference-between-probability-and-statistics.png",desc:"Analyze data, probability models, and statistical measures for decision making.",history:"Probability and statistics are essential for risk analysis, quality control, and AI applications.",learn:["Probability Models","Data Analysis","Mean, Median, Std Deviation"]}
 };
-
-function openCourse(courseName) {
-  const course = courses[courseName];
-  document.getElementById('courseTitle').textContent = courseName;
-  document.getElementById('courseImage').src = course.image;
-  const learnList = document.getElementById('courseLearn');
-  learnList.innerHTML = "";
-  course.learn.forEach(item=>{const li=document.createElement('li');li.textContent=item;learnList.appendChild(li);});
-  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
-  document.getElementById('courseDetail').style.display='block';
-  window.scrollTo(0,0);
+function openCourse(name){
+const c=courses[name];
+document.getElementById("courseTitle").textContent=name;
+document.getElementById("courseImage").src=c.image;
+document.getElementById("courseDesc").textContent=c.desc;
+document.getElementById("courseHistory").textContent=c.history;
+const ul=document.getElementById("courseLearn"); ul.innerHTML=""; c.learn.forEach(f=>{let li=document.createElement("li"); li.textContent=f; ul.appendChild(li);});
+showSection("courseDetail");
+}
+function showSection(id){
+document.querySelectorAll("section").forEach(s=>s.style.display="none");
+document.getElementById(id).style.display="block"; window.scrollTo(0,0);
 }
 
-function showSection(id) {
-  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
-  document.getElementById(id).style.display='block';
-  window.scrollTo(0,0);
+// Chatbot
+function sendMessage(){
+const input=document.getElementById("chatInput");
+const msg=input.value.trim(); if(!msg) return;
+const chat=document.getElementById("chatMessages");
+let userDiv=document.createElement("div"); userDiv.textContent="You: "+msg; userDiv.style.marginBottom="5px"; chat.appendChild(userDiv);
+let botDiv=document.createElement("div"); botDiv.textContent="AI Tutor: I am here to help you learn. For detailed answers, ask a specific course question."; botDiv.style.marginBottom="10px"; botDiv.style.color="#00e6ff"; chat.appendChild(botDiv);
+chat.scrollTop=chat.scrollHeight; input.value="";
 }
 
-function showDashboard(){
-  document.querySelector('.login-box').style.display='none';
-  document.getElementById('dashboard').style.display='block';
-}
+// Background circuit animation
+const canvas=document.getElementById("bgCanvas"); const ctx=canvas.getContext("2d"); let width=canvas.width=window.innerWidth; let height=canvas.height=window.innerHeight;
+window.addEventListener("resize",()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;});
+let nodes=[]; for(let i=0;i<50;i++){ nodes.push({x:Math.random()*width, y:Math.random()*height, vx:(Math.random()-0.5)*0.5, vy:(Math.random()-0.5)*0.5});}
+function animate(){ ctx.clearRect(0,0,width,height); nodes.forEach(n=>{ n.x+=n.vx; n.y+=n.vy; if(n.x<0||n.x>width)n.vx*=-1; if(n.y<0||n.y>height)n.vy*=-1; ctx.fillStyle="#00e6ff"; ctx.beginPath(); ctx.arc(n.x,n.y,2,0,Math.PI*2); ctx.fill(); nodes.forEach(m=>{ let dx=n.x-m.x; let dy=n.y-m.y; let dist=Math.sqrt(dx*dx+dy*dy); if(dist<100){ ctx.strokeStyle="rgba(0,230,255,"+(1-dist/100)+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.stroke();}});}); requestAnimationFrame(animate);}
+animate();
 </script>
-
 </body>
 </html>
+
